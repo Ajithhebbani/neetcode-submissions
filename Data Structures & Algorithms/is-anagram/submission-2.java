@@ -1,0 +1,30 @@
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        if(s.length() != t.length()) return false;
+        int[] count = new int[26];
+
+        for(int i=0;i<s.length();i++){
+            // System.out.println("s.charAt(i) -'a' " + (s.charAt(i) -'a'));
+            count[s.charAt(i) -'a']++;
+            count[t.charAt(i) -'a']--;
+
+            // System.out.println("count  " + Arrays.toString(count));
+        }
+        for(int c: count){
+            if(c != 0){
+                 return false;
+            }
+        }
+        return true;
+}
+
+        // char[] a = s.toCharArray();
+        // char[] b = t.toCharArray();
+
+        // Arrays.sort(a);
+        // Arrays.sort(b);
+
+        //return Arrays.equals(a,b);
+
+    }
+
